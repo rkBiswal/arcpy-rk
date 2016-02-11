@@ -5,7 +5,7 @@ import webbrowser;
 import xml.dom.minidom as DOM;
 import arcpy;
 from arcpy import env;
-env.overwriteOutput = True;
+env.overwriteOutput = True;  ## To overwrite the current env gis objects as an output ...
 
 optAction = arcpy.GetParameterAsText(0)
 optMxd = arcpy.GetParameterAsText(1)
