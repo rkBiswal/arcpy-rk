@@ -6,8 +6,8 @@ workSpacePath = arcpy.GetParameterAsText(0)
 csvSchemaFilePath = arcpy.GetParameterAsText(1)
 
 ### Params -  In Line Code  ###
-workSpacePath = u'D:\\TCS\\IMISGIS_DMA0500.gdb'  ## Can be FGDB Path / SDE connection file Path
-csvSchemaFilePath = u'E:\\'   ## Folder Path containing all the CSV files DataSet wise
+workSpacePath = u'D:\\TCS\\IMISGIS_DMA0500.gdb'  ## Can be FGDB Path / SDE connection file Path  u'D:\\TCS\\IMISGIS_DMA0500.gdb'
+csvSchemaFilePath = u'E:\\'   ## Folder Path containing all the CSV files DataSet wise  u'E:\\'
 
 indexFtCls = 0; indexFtClsType = 1; indexFld = 2; indexFldAls = 3; indexDomain = 4;
 indexDfVal = 5; indexType = 6; indexLen = 7; indexPrsn = 8;
@@ -35,7 +35,7 @@ def getFieldType(_fldType):
     
 print "Process Started ... ";
 try:
-    _lstDs = [str(x).upper() for x in arcpy.ListDatasets()]
+    _lstDs = [str(x).upper() for x in arcpy.ListDatasets()] if  arcpy.ListDatasets() != None else []
     _csvFiles = [x for x in os.listdir(csvSchemaFilePath) if x.endswith('.csv')]
 
     for _csvFile in _csvFiles:
